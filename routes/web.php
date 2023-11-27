@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,14 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+// ホーム画面表示
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('items')->group(function () {
     Route::get('/', [App\Http\Controllers\ItemController::class, 'index']);
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
+    Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+    Route::post('/update/{id}', [App\Http\Controllers\ItemController::class, 'update']);
+    Route::get('/destroy/{id}', [App\Http\Controllers\ItemController::class, 'destroy']);
 });

@@ -3,7 +3,7 @@
 @section('title', '商品登録')
 
 @section('content_header')
-    <h1>商品登録</h1>
+    <h1>商品編集</h1>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                            < li>{{ $error }}</>
                         @endforeach
                     </ul>
                 </div>
@@ -34,18 +34,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="total_price">価格</label>
-                            <input type="text" class="form-control" id="type" name="total_price" placeholder="種別">
-                        </div>
-
-                        <div class="form-group">
                             <label for="detail">詳細</label>
                             <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
                         </div>
                     </div>
 
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">登録</button>
+                    <div class="card-footer d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-primary">更新</button>
+                        <button type="submit" class="btn btn-primary">削除</button>
                     </div>
                 </form>
             </div>
