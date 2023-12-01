@@ -20,7 +20,7 @@
             @endif
 
             <div class="card card-primary">
-                <form method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -35,7 +35,7 @@
 
                         <div class="form-group">
                             <label for="total_price">価格</label>
-                            <input type="text" class="form-control" id="type" name="total_price" placeholder="種別">
+                            <input type="text" class="form-control" id="type" name="total_price" placeholder="価格">
                         </div>
 
                         <div class="form-group">
@@ -44,6 +44,14 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label for="img_name">商品画像</label>
+                        <input type="file" class="form-control" name="img_name" id="img_name">
+                        @if($errors->has('img_name'))
+                            <p class="text-danger">{{ $errors->first('img_name') }}</p>
+                        @endif
+                    </div>
+                    
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">登録</button>
                     </div>

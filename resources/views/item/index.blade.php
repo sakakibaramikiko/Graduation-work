@@ -27,7 +27,9 @@
                                 <th>ID</th>
                                 <th>商品名</th>
                                 <th>種別</th>
+                                <th>価格</th>
                                 <th>詳細</th>
+                                <th>画像</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,8 +38,12 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->type }}</td>
+                                    <td>{{ $item->total_price }}</td>
                                     <td>{{ $item->detail }}</td>
-                                    <td><a href="{{ url('items/edit') }}" class="btn btn-default">編集</a></td>
+                                    <td>{{ $item->views }}</td>
+                                    <td>
+                                        <a href="{{ url('items/delete/'.$item->id) }}" class="btn btn-default">削除</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
