@@ -13,7 +13,7 @@
         <div class="card m-3" style="width: 17rem;">
             <img src="{{ asset('img/blue-box.png')}}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title"><br><br>Jewelry | ジュエリー</h5>
+                <h5 class="card-title">Jewelry | ジュエリー</h5>
                 <p class="card-text"><br>Tiffany & Co. / Cartier / BVLGARI / MIKIMOTO /</p>
             </div>
             <ul class="list-group list-group-flush">
