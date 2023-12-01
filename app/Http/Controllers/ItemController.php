@@ -66,7 +66,7 @@ class ItemController extends Controller
                 $imageData ='data:image/png;base64,'.base64_encode(file_get_contents($image->path()));
             }   
                 // 商品登録
-                Item::create([
+                Item::add([
                     'user_id' => Auth::user()->id,
                     'name' => $request->name,
                     'type' => $request->type,
