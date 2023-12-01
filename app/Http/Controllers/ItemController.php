@@ -26,7 +26,8 @@ class ItemController extends Controller
         // 商品一覧取得
         $items = Item::all();
 
-        return view('item.index', compact('items'));
+        // 'item/index'->'items'へ変更した
+        return view('items', compact('items'));
     }
 
     /**
@@ -65,8 +66,7 @@ class ItemController extends Controller
                 $image = $request->file('img_name');
                 $imageData ='data:image/png;base64,'.base64_encode(file_get_contents($image->path()));
             }   
-                // 商品登録
-                Item::add([
+                Item::create([
                     'user_id' => Auth::user()->id,
                     'name' => $request->name,
                     'type' => $request->type,
