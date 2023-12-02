@@ -18,7 +18,6 @@ class Item extends Model
         'total_price',
         'detail',
         'img_name'
-
     ];
 
     /**

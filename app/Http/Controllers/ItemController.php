@@ -71,13 +71,80 @@ class ItemController extends Controller
                     'type' => $request->type,
                     'total_price' => $request->total_price,
                     'detail' => $request->detail,
-                    'img_name' => $request->$imageData
+                    'img_name' => $imageData
                 ]);
             return redirect('items')->with('message','商品情報が登録されました。');   
         }           
         return view('item/add');
     }
 
+    /**商品編集画面
+    public function edit($id)
+    {
+        $title = '商品編集';
+        $item = Item::find($id);
+        return view('item/edit', compact('title', 'item'));
+    }
+
+    // 商品更新処理
+    public function update(Request $request,$id)
+    {
+        $validated = $request->validate([
+            'name' => 'required|unique:item,name' , $id . '|max:100',
+            'type' => 'required|max:100',
+            'total_price' => 'required|numeric|digits_between:1,10',
+            'detail' => 'nullable',
+            'img_name' => 'nullable|image|max:50'
+        ],
+        [
+            'name.required' => '商品面を入力してください。',
+            'name.unique' =>'既に登録されている商品です。',
+            'name.max' =>'商品名は100文字以内で入力してください。',
+            'type.required' => '種別を入力してください。',
+            'type.max' => '種別は100文字以内で入力してください。',
+            'total_price.required' => '価格を入力してください。',
+            'total_price.numeric' => '価格は数字で入力してください。',
+            'total_price.digits_between' => '価格は1～10桁以内で入力してください。',
+            'img_name.image' => '画像形式ファイルをアップロードしてください。',
+            'img_name.max' => '画像ファイルは50キロバイト以下のファイルを選択してください。'
+        ]);
+        $item = Item::find($id);
+
+        // 画像ファイルを処理する
+        $deleteImage = $request->has('delete_image'); // チェックボックスの状態を取得
+        if ($deleteImage) {
+            // 画像を削除する場合
+            $item->update([
+                'name' => $validated['name'],
+                'type' => $validated['type'],
+                'total_price' => $validated['total_price'],
+                'detail' => $validated['detail'],
+                'img_name' => null // 画像を削除するために null で更新
+            ]);
+        } elseif ($request->hasFile('img_name')) {
+            // 新しい画像がアップロードされた場合
+            $image = $request->file('img_name');
+            $imageData = 'data:image/png;base64,'.base64_encode(file_get_contents($image->path()));
+
+            $item->update([
+                'name' => $validated['name'],
+                'type' => $validated['type'],
+                'total_price' => $validated['total_price'],
+                'detail' => $validated['comment'],
+                'img_name' -> $imageData
+            ]);
+        } else {
+            // 画像の変更がない場合は通常の情報変更を行う
+            $item->update([
+                'name' => $validated['name'],
+                'type' => $validated['type'],
+                'total_price' => $validated['total_price'],
+                'detail' => $validated['detail']
+            ]);
+        }
+        return redirect()->route('update')->with('message','商品情報が更新されました。');   
+    }
+    */
 
     // 商品削除
     public function destroy($id)

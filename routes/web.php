@@ -29,7 +29,7 @@ Route::prefix('items')->group(function () {
     Route::get('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/add', [App\Http\Controllers\ItemController::class, 'add']);
     Route::post('/', [App\Http\Controllers\ItemController::class, 'create']);
-    Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
-    Route::post('/update/{id}', [App\Http\Controllers\ItemController::class, 'update']);
-    Route::get('/delete/{id}', [App\Http\Controllers\ItemController::class, 'destroy']);
+    // Route::get('/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+    // Route::post('/update/{id}', [App\Http\Controllers\ItemController::class, 'update'])->name('update');
+    Route::get('/delete/{id}', [App\Http\Controllers\ItemController::class, 'destroy'])->name('destroy');
 });

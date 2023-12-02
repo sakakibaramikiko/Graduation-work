@@ -11,10 +11,10 @@
     <p>special present for you</p>
     <div class="row">
         <div class="card m-3" style="width: 17rem;">
-            <img src="{{ asset('img/blue-box.png')}}" class="card-img-top" alt="...">
+                <img src="{{ asset('img/blue-box.png')}}" class="card-img-top" alt="GIFT">
             <div class="card-body">
                 <h5 class="card-title">Jewelry | ジュエリー</h5>
-                <p class="card-text"><br>Tiffany & Co. / Cartier / BVLGARI / MIKIMOTO /</p>
+                <p class="card-text"><br>Tiffany & Co. / Cartier / BVLGARI / MIKIMOTO / Van Cleef & Arpels /</p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">リング<br>ネックレス/ピアス<br>時計</li>
@@ -24,10 +24,10 @@
             </div>
         </div>
         <div class="card m-3" style="width: 17rem;">
-            <img src="{{ asset('img/pink-box.png')}}" class="card-img-top" alt="...">
+                <img src="{{ asset('img/pink-box.png')}}" class="card-img-top" alt="GIFT">
             <div class="card-body">
                 <h5 class="card-title">Perfume | 香水</h5>
-                <p class="card-text"><br>KENZO / Chloe / CHANEL / HERMES / Yves Saint Laurent / DIOR / SHIRO /</p>
+                <p class="card-text"><br>KENZO / CHANEL / Yves Saint Laurent / DIOR / Chloe / HERMES / </p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">パルファム<br>オードパルファム<br>オードトワレ</li>
@@ -37,10 +37,10 @@
             </div>
         </div>
         <div class="card m-3" style="width: 17rem;">
-            <img src="{{ asset('img/flower-box.png')}}" class="card-img-top" alt="...">
+            <img src="{{ asset('img/flower-box.png')}}" class="card-img-top" alt="GIFT">
             <div class="card-body">
                 <h5 class="card-title">Flower | フラワー</h5>
-                <p class="card-text"><br>nicolai bergmann / hibiyakadan / fragrance / English garden/ nirakuen </p>
+                <p class="card-text"><br>nicolai bergmann / hibiyakadan / fragrance / English garden/ </p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">フラワーボックス<br>ブーケ<br>プリザーブドフラワー</li>
@@ -50,10 +50,10 @@
             </div>
         </div>
         <div class="card m-3" style="width: 17rem;">
-            <img src="{{ asset('img/cake-box.png')}}" class="card-img-top" alt="...">
+            <img src="{{ asset('img/cake-box.png')}}" class="card-img-top" alt="GIFT">
             <div class="card-body">
                 <h5 class="card-title">Christmas | クリスマス</h5>
-                <p class="card-text"><br>quilfaitbon / poche-du-reve / maman et fille / TOOTH TOOTH / L'AVENUE /</p>
+                <p class="card-text"><br>quilfaitbon / poche-du-reve / maman et fille / L'AVENUE /</p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ケーキ<br>コスメ<br>イルミネーション</li>

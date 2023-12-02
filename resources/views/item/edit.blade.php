@@ -34,13 +34,19 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="total_price">価格</label>
+                            <input type="text" class="form-control" id="total_price" name="total_price" placeholder="価格">
+                        </div>
+                    </div>
+
+                        <div class="form-group">
                             <label for="detail">詳細</label>
                             <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
                         </div>
                     </div>
 
                     <div class="card-footer d-grid gap-2 col-6 mx-auto">
-                        <button type="button" class="btn btn-primary">編集</button>
+                        <button type="button" class="btn btn-primary">更新</button>
                     </div>
                 </form>
             </div>
@@ -53,3 +59,33 @@
 
 @section('js')
 @stop
+
+
+// index.blade 23行目
+{{-- <table class="table table-hover text-nowrap">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>商品名</th>
+            <th>種別</th>
+            <th>価格</th>
+            <th>詳細</th>
+            <th>画像</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($items as $item)
+            <tr>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->name }}</td>
+                <td>{{ $item->type }}</td>
+                <td>{{ $item->total_price }}</td>
+                <td>{{ $item->detail }}</td>
+                <td>{{ $item->views }}</td>
+                <td>
+                    <a href="{{ url('items/delete/'.$item->id) }}" class="btn btn-default">削除</a>
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>  --}}
