@@ -40,7 +40,7 @@
                                     <td>{{ $item->type }}</td>
                                     <td>{{ $item->total_price }}</td>
                                     <td>{{ $item->detail }}</td>
-                                    <td>{{ $item->views }}</td>
+                                    <td><img src="{{ $item->img_name }}" alt="{{ $item->img_name }}" class="img-small"></td>
                                     <td>
                                         <a href="{{ url('items/delete/'.$item->id) }}" class="btn btn-default">削除</a>
                                     </td>
@@ -49,7 +49,6 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
         </div>
     </div>
 @stop

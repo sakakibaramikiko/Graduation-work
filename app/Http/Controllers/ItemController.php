@@ -26,7 +26,6 @@ class ItemController extends Controller
         // 商品一覧取得
         $items = Item::all();
 
-        // 'item/index'->'items'へ変更した
         return view('item/index', compact('items'));
     }
 
