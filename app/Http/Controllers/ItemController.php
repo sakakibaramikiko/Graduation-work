@@ -78,16 +78,15 @@ class ItemController extends Controller
         return view('item/add');
     }
 
-    /**商品編集画面
-    public function edit($id)
+    // 商品編集画面
+    public function edit(string $id)
     {
-        $title = '商品編集';
         $item = Item::find($id);
-        return view('item/edit', compact('title', 'item'));
+        return view('item.edit', compact('item'));
     }
 
     // 商品更新処理
-    public function update(Request $request,$id)
+    public function update(Request $request, string $id)
     {
         $validated = $request->validate([
             'name' => 'required|unique:item,name' , $id . '|max:100',
@@ -131,7 +130,7 @@ class ItemController extends Controller
                 'type' => $validated['type'],
                 'total_price' => $validated['total_price'],
                 'detail' => $validated['comment'],
-                'img_name' -> $imageData
+                'img_name' => $imageData
             ]);
         } else {
             // 画像の変更がない場合は通常の情報変更を行う
@@ -141,10 +140,10 @@ class ItemController extends Controller
                 'total_price' => $validated['total_price'],
                 'detail' => $validated['detail']
             ]);
+            return redirect()->route('update')->with('message','商品情報が更新されました。'); 
         }
-        return redirect()->route('update')->with('message','商品情報が更新されました。');   
+        return view('item/index');
     }
-    */
 
     // 商品削除
     public function destroy($id)

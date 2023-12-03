@@ -62,6 +62,7 @@
                 <a href="#" class="card-link">Card link</a>
             </div>
     </div>
+</div>
 @stop
 
 @section('css')
