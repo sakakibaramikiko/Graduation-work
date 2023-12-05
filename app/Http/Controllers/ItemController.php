@@ -30,6 +30,21 @@ class ItemController extends Controller
     }
 
     /**
+     * 指定した商品のリンク先を表示する
+     */
+    public function getItemUrl()
+    {
+        // 'type'が 'Jewelry | ジュエリー' の商品を表示する
+        $item = Item::where('type', 'Jewelry | ジュエリー');
+        if ($item) {
+            return view('items.index', ['item' => $item]);
+        }
+        else {
+            // 'type'が 'Jewelry | ジュエリー' の商品がない場合の処理
+            return view('items.not_found');
+        }   
+    }
+    /**
      * 商品登録
      */
     public function add(Request $request)
@@ -78,7 +93,7 @@ class ItemController extends Controller
         return view('item/add');
     }
 
-    // 商品編集画面
+    // 商品編集画面へ遷移
     public function edit(string $id)
     {
         $item = Item::find($id);
@@ -89,7 +104,8 @@ class ItemController extends Controller
     public function update(Request $request, string $id)
     {
         $validated = $request->validate([
-            'name' => 'required|unique:item,name' , $id . '|max:100',
+            // 'name' => 'required|unique:item,name,'. $id . '|max:100',
+            'name' => 'required|max:100',
             'type' => 'required|max:100',
             'total_price' => 'required|numeric|digits_between:1,10',
             'detail' => 'nullable',
@@ -108,6 +124,10 @@ class ItemController extends Controller
             'img_name.max' => '画像ファイルは50キロバイト以下のファイルを選択してください。'
         ]);
         $item = Item::find($id);
+            $item->name = $request->input('name');
+            $item->type = $request->input('type');
+            $item->total_price = $request->input('total_price');
+            $item->detail = $request->input('detail');
 
         // 画像ファイルを処理する
         $deleteImage = $request->has('delete_image'); // チェックボックスの状態を取得
@@ -129,7 +149,7 @@ class ItemController extends Controller
                 'name' => $validated['name'],
                 'type' => $validated['type'],
                 'total_price' => $validated['total_price'],
-                'detail' => $validated['comment'],
+                'detail' => $validated['detail'],
                 'img_name' => $imageData
             ]);
         } else {
@@ -140,9 +160,9 @@ class ItemController extends Controller
                 'total_price' => $validated['total_price'],
                 'detail' => $validated['detail']
             ]);
-            return redirect()->route('update')->with('message','商品情報が更新されました。'); 
+            
         }
-        return view('item/index');
+        return redirect()->route('index');
     }
 
     // 商品削除

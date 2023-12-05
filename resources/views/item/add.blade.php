@@ -3,7 +3,14 @@
 @section('title', '商品登録')
 
 @section('content_header')
-    <h1>商品登録</h1>
+<div class="card-header">
+    <h2 class="card-title">商品登録</h2> 
+    <div class="input-group input-group-sm">
+        <div class="input-group-append">
+            <a href="{{ url('items') }}" class="btn btn-link"><u>商品一覧画面へ</u></a>
+        </div>
+    </div>
+</div>
 @stop
 
 @section('content')
@@ -19,7 +26,11 @@
                     </ul>
                 </div>
             @endif
-
+            <div class="card-header">
+                <h3 class="card-title">商品登録</h3>
+                    <div class="card-tools"> 
+                    </div>
+                </div>     
             <div class="card card-primary">
                 <form method="POST" enctype="multipart/form-data">
                     @csrf

@@ -1,0 +1,41 @@
+/* index.blade カードの画像サイズを統一する */
+.img card-img-top {
+    max-height: 250px;
+    max-width: 250px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.tbody img {
+    max-width: 100px;
+    height: auto;
+}
+
+.td 
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.item {
+    width: 180px;
+    padding-bottom: 30px;
+    margin-right: 10px;
+}
+.item img{
+    width: 100%;
+    height: 230px;
+    border: 1px solid rgb(191, 191, 191);
+    object-fit: contain;
+    background-color: white;
+}
+.no-img{
+    width: 100%;
+    height: 230px;
+    border: 1px solid rgb(191, 191, 191);
+}
+.no-img p{
+    line-height: 230px;
+    color: gray;
+} 

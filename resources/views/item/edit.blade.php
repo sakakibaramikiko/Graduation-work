@@ -19,9 +19,8 @@
                     </ul>
                 </div>
             @endif
-
-            {{-- <form action="{{ url('items/update'. $item->id) }}" method="post" enctype="multipart/form-data"> --}}
-                {{-- @csrf --}}
+            <form action="{{ url('items/update/'. $item->id) }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <!-- 商品画像の現在の表示 -->
                 <div>
                     <div class="" style="width: 20%;">
@@ -72,12 +71,10 @@
                             <input type="text" class="form-control" id="detail" name="detail" value="{{ $item->detail }}">
                     </div>  
                     <div class="form-group">
-                        <form action="{{ url('items/update/'. $item->id) }}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <button type="button" class="btn btn-info w-25">商品データを更新する</button>
-                        </form>
+                        <button type="submit" class="btn btn-info w-25">商品データを更新する</button>
                     </div>
                 </div>
+            </form>
         </div>
     </div>
 </div>

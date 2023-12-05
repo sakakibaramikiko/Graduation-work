@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
@@ -11,13 +12,15 @@ class Item extends Model
      *
      * @var array<int, string>
      */
+    use HasFactory;
     protected $fillable = [
         'user_id',
         'name',
         'type',
         'total_price',
         'detail',
-        'img_name'
+        'img_name',
+        'views'
     ];
 
     /**
