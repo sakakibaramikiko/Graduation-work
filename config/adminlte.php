@@ -112,8 +112,8 @@ return [
             'path' => 'img/blue-box.png',
             'alt' => 'GIFT',
             'effect' => 'animation__shake',
-            'width' => 150,
-            'height' => 150,
+            'width' => 100,
+            'height' => 100,
         ],
     ],
 
