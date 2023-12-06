@@ -11,8 +11,9 @@
 @if ( session('message') )
     <div class="alert alert-success" role="alert">{{ session('message') }}</div>
 @endif
+
 <div class="card-header">
-    <h3 class="card-title">商品一覧</h3> 
+    <h2 class="card-title">GIFT&ensp;LIST</h2> 
 </div>
 <div class=container> 
     <div class="row">
@@ -23,6 +24,7 @@
                     <div class="input-group input-group-sm">
                         <div class="input-group-append">
                             <a href="{{ url('items/add') }}" class="btn btn-link"><u>商品登録画面へ</u></a>
+                            <a href="{{ url('/') }}" class="btn btn-link"><u>HOME</u></a>
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '商品登録')
+@section('title', '商品編集')
 
 @section('content_header')
-    <h1>商品編集</h1>
+    <h4>EDIT&ensp;GIFT</h4>
 @stop
 
 @section('content')
@@ -19,6 +19,18 @@
                     </ul>
                 </div>
             @endif
+            <div class="card-header">
+                <h3 class="card-title">商品編集</h3>
+                    <div class="card-tools"> 
+                        <div class="input-group input-group-sm">
+                            <div class="input-group-append">
+                                <a href="{{ url('items') }}" class="btn btn-link"><u>一覧画面へ戻る</u></a>
+                                <a href="{{ url('items/add') }}" class="btn btn-link"><u>商品登録画面へ</u></a>
+                                <a href="{{ url('/') }}" class="btn btn-link"><u>HOME</u></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
             <form action="{{ url('items/update/'. $item->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <!-- 商品画像の現在の表示 -->

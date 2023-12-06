@@ -124,44 +124,56 @@ class ItemController extends Controller
             'img_name.max' => '画像ファイルは50キロバイト以下のファイルを選択してください。'
         ]);
         $item = Item::find($id);
-            $item->name = $request->input('name');
-            $item->type = $request->input('type');
-            $item->total_price = $request->input('total_price');
-            $item->detail = $request->input('detail');
-
-        // 画像ファイルを処理する
+        $item->name = $request->input('name');
+        $item->type = $request->input('type');
+        $item->total_price = $request->input('total_price');
+        $item->detail = $request->input('detail');
         $deleteImage = $request->has('delete_image'); // チェックボックスの状態を取得
-        if ($deleteImage) {
-            // 画像を削除する場合
-            $item->update([
-                'name' => $validated['name'],
-                'type' => $validated['type'],
-                'total_price' => $validated['total_price'],
-                'detail' => $validated['detail'],
-                'img_name' => null // 画像を削除するために null で更新
-            ]);
-        } elseif ($request->hasFile('img_name')) {
-            // 新しい画像がアップロードされた場合
+        //dd($request->has('delete_image'));
+        if ($request->has('delete_image')){
+            $item->img_name = null;
+        }
+        if($request->has('img_name')){
             $image = $request->file('img_name');
             $imageData = 'data:image/png;base64,'.base64_encode(file_get_contents($image->path()));
-
-            $item->update([
-                'name' => $validated['name'],
-                'type' => $validated['type'],
-                'total_price' => $validated['total_price'],
-                'detail' => $validated['detail'],
-                'img_name' => $imageData
-            ]);
-        } else {
-            // 画像の変更がない場合は通常の情報変更を行う
-            $item->update([
-                'name' => $validated['name'],
-                'type' => $validated['type'],
-                'total_price' => $validated['total_price'],
-                'detail' => $validated['detail']
-            ]);
-            
+            $item->img_name = $imageData;
         }
+
+        $item->save();
+
+        // 画像ファイルを処理する
+        
+        // if ($deleteImage) {
+        //     // 画像を削除する場合
+        //     $item->update([
+        //         'name' => $validated['name'],
+        //         'type' => $validated['type'],
+        //         'total_price' => $validated['total_price'],
+        //         'detail' => $validated['detail'],
+        //         'img_name' => null // 画像を削除するために null で更新
+        //     ]);
+        // } elseif ($request->hasFile('img_name')) {
+        //     // 新しい画像がアップロードされた場合
+        //     $image = $request->file('img_name');
+        //     $imageData = 'data:image/png;base64,'.base64_encode(file_get_contents($image->path()));
+
+        //     $item->update([
+        //         'name' => $validated['name'],
+        //         'type' => $validated['type'],
+        //         'total_price' => $validated['total_price'],
+        //         'detail' => $validated['detail'],
+        //         'img_name' => $imageData
+        //     ]);
+        // } else {
+        //     // 画像の変更がない場合は通常の情報変更を行う
+        //     $item->update([
+        //         'name' => $validated['name'],
+        //         'type' => $validated['type'],
+        //         'total_price' => $validated['total_price'],
+        //         'detail' => $validated['detail']
+        //     ]);
+            
+        // }
         return redirect()->route('index');
     }
 

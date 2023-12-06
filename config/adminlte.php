@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>商品管理</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>GIFT&ensp;25thAnniversary</b>',
+    'logo_img' => 'img/blue-box.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => '商品管理',
+    'logo_img_alt' => 'GIFT',
 
     /*
     |--------------------------------------------------------------------------
@@ -86,8 +86,8 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'Auth Logo',
+            'path' => 'img/blue-box.png',
+            'alt' => 'GIFT',
             'class' => '',
             'width' => 50,
             'height' => 50,
@@ -109,11 +109,11 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'path' => 'img/blue-box.png',
+            'alt' => 'GIFT',
             'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'width' => 150,
+            'height' => 150,
         ],
     ],
 
@@ -293,25 +293,34 @@ return [
         [
             'text' => '商品一覧',
             'url'  => 'items',
-            'icon' => 'fas fa-gamepad',
+            'icon' => 'fas fa-th-list',
+        ],
+        [
+            'text' => '商品登録',
+            'url'  => 'items/add',
+            'icon' => 'fas fa-download',
+        ],
+        [
+            'text' => 'HOME',
+            'url'  => '/',
+            'icon' => 'fas fa-home',
         ],
 
         // AdminLTEデフォルト
-        /*
+        
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
+            // 'text'         => 'search',
             'topnav_right' => true,
         ],
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-        */
-
+/*
         // AdminLTEデフォルト
-        /*
+        
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
@@ -395,7 +404,8 @@ return [
             'url'        => '#',
         ],
         */
-    ],
+  ],
+
 
     /*
     |--------------------------------------------------------------------------
