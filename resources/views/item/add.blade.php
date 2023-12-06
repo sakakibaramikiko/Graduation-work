@@ -4,7 +4,7 @@
 
 @section('content_header')
 <div class="card-header">
-    <h2 class="card-title">REGSTER&ensp;GIFT</h2> 
+    <h2 class="card-title">REGISTER&ensp;GIFT</h2> 
 </div>
 @stop
 
