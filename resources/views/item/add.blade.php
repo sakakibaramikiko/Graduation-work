@@ -58,15 +58,15 @@
                                 <label for="detail">詳細</label>
                                 <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
                             </div>
-                            <div class="form-group">
+                            <div class="table-hover text-nowrap">
                                 <label for="img_name">商品画像</label>
-                                <input type="file" class="form-control" name="img_name" id="img_name">
+                                <input type="file" class="form-control-file" name="img_name" id="img_name">
                                     @if($errors->has('img_name'))
                                         <p class="text-danger">{{ $errors->first('img_name') }}</p>
                                     @endif
                             </div> 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-info w-100">商品を登録する</button>
+                            <button type="submit" class="btn btn-outline-info w-100">商品を登録する</button>
                         </div>
                     </form>
                 </div>

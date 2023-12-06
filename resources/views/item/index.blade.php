@@ -15,8 +15,8 @@
 <div class="card-header">
     <h2 class="card-title">GIFT&ensp;LIST</h2> 
 </div>
-<div class=container> 
-    <div class="row">
+<div class="container"> 
+    <div class="row mt-3">
         <div class="card">
             <div class="card-header">
             <h3 class="card-title">商品一覧</h3>
@@ -54,11 +54,11 @@
                                 <td>
                                     <form action="{{ url('items/edit/' . $item->id) }}" method="get">
                                     @csrf
-                                        <button type="submit" class="btn btn-outline-info mb-2">編集</button>
+                                        <button type="submit" class="btn btn-outline-light mb-2">編集</button>
                                     </form>
                                     <form action="{{ url('items/delete/' . $item->id) }}" method="post" onsubmit="return confirm('登録データを削除します。削除してもよろしいですか。')">
                                     @csrf
-                                        <button type="submit" class="btn btn-outline-warning">削除</button>
+                                        <button type="submit" class="btn btn-outline-light">削除</button>
                                     </form>
                                 </td>
                             </tr>

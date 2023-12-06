@@ -83,7 +83,7 @@
                             <input type="text" class="form-control" id="detail" name="detail" value="{{ $item->detail }}">
                     </div>  
                     <div class="form-group">
-                        <button type="submit" class="btn btn-info w-25">商品データを更新する</button>
+                        <button type="submit" class="btn btn-outline-info w-100">商品データを更新する</button>
                     </div>
                 </div>
             </form>
