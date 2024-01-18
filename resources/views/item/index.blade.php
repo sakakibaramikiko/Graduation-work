@@ -11,11 +11,11 @@
 @if ( session('message') )
     <div class="alert alert-success" role="alert">{{ session('message') }}</div>
 @endif
-
-<div class="card-header">
-    <h2 class="card-title">GIFT&ensp;LIST</h2> 
-</div>
 <div class="container"> 
+    <div class="card-header">
+        <h2 class="card-title">GIFT&ensp;LIST</h2> 
+    </div>
+
     <div class="row mt-3">
         <div class="card">
             <div class="card-header">
