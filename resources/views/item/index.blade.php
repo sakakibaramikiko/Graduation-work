@@ -46,7 +46,7 @@
                         @foreach($items as $item)
                             <tr>
                                 <td class="td">{{ $item->id }}</td>
-                                <td><img src="{{ $item->img_name }}" alt="{{ $item->img_name }}" class="img" style="max-height: 100PX; max-width: 100px;"></td>
+                                <td><img src="{{ $item->img_name }}" alt="{{ $item->img_name }}" class="img" style="max-height: 100PX; max-width: 100px;"></td>                      </div>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->type }}</td>
                                 <td>¥ {{ number_format($item->total_price) }}</td>
